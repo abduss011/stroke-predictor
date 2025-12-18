@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StrokeRisk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Stroke Assessment Tool</h1>
+        <form id="predictForm">
+            <div class="form-group">
+                <label>Gender</label>
+                <select name="gender" required>
+                    <option value="Male"> Male </option>
+                    <option value="Female"> Female </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Age</label>
+                <input type="number" name="age" step="1" min="0" max="120" required>
+            </div>
+            <div class="form-group">
+                <label>Hypertension</label>
+                <select name="hypertension" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Heart Disease</label>
+                <select name="heart_disease" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Ever Married</label>
+                <select name="ever_married" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Work Type</label>
+                <select name="work_type" required>
+                    <option value="Private">Private</option>
+                    <option value="Self-employed">Self-employed</option>
+                    <option value="Govt_job">Government Job</option>
+                    <option value="children">Children</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Residence</label>
+                <select name="Residence_type" required>
+                    <option value="Urban">Urban</option>
+                    <option value="Rural">Rural</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Smoking Status</label>
+                <select name="smoking_status" required>
+                    <option value="never smoked">Never Smoked</option>
+                    <option value="formerly smoked">Formerly Smoked</option>
+                    <option value="smokes">Smokes</option>
+                    <option value="Unknown">Unknown</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Avg Glucose Level (mg/dL)</label>
+                <input type="number" name="avg_glucose_level" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label>BMI (kg/m²)</label>
+                <input type="number" name="bmi" step="0.1" required>
+            </div>
+            <button type="submit" class="full-width">Run Prediction</button>
+        </form>
+        <div id="result">
+            <div class="metric">
+                <strong>Risk Level:</strong>
+                <span id="riskLevel">-</span>
+            </div>
+            <div class="metric">
+                <strong>Probability:</strong>
+                <span id="probability">-</span>
+            </div>
+            <div id="recText" class="recommendation"></div>
+        </div>
+    </div>
+</body>
+
+</html>
