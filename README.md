@@ -7,7 +7,7 @@ ML stroke prediction project based on medical and lifestyle factors.I used Flask
 ![Whole Page](screens/img11.png)
 
 ## Getting Started
-
+**Deployment on render : https://stroke-risk-assessment-1c5w.onrender.com**
 ### 1.Installation
 Install the necessary dependencies:
 ```bash
@@ -34,3 +34,5 @@ Then visit: [http://127.0.0.1:5001](http://127.0.0.1:5001)
 - `templates/`: HTML frontend files.
 - `models/`: Saved model artifacts (.joblib files).
 - `data/`: Dataset storage(Kaggle).
+
+
